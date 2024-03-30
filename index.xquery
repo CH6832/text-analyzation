@@ -7,7 +7,7 @@ declare option exist:serialize "method=html media-type=text/html";
 let $werke :=
 <texts>
     {
-        for $resource in collection("/briefe/data")
+        for $resource in collection("/textanalyzation/data")
         return
     <text name="{ replace(base-uri($resource), '.+/(.+)$', '$1') }">
             { $resource//title[@n = 'digital'] }
@@ -26,7 +26,7 @@ return
 
     <!-- Bootstrap Navigation -->
          <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">ANALYZATIONS OF TEXTS</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
     aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,10 +38,10 @@ return
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="listing.xquery">Textsammlung</a>
+            <a class="nav-link" href="listing.xquery">Text collection</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="analyze-all.xquery">Analyse</a>
+            <a class="nav-link" href="analyze-all.xquery">Analyzation</a>
           </li>
         </ul>
       </div>
@@ -53,10 +53,10 @@ return
 
       <div class="starter-template" style="text-align: left;">
 
-    <h1>Projektbeschreibung</h1>
+    <h1>Project description</h1>
     <br/>
-   <h4>Quelle</h4>
-   <p>Quelle der Text sind folgende Repositorien: <a href="https://www.jeanpaul-edition.de/start.html">Jean Paul –
+   <h4>Source</h4>
+   <p>Sources of the texts are the following repositories: <a href="https://www.jeanpaul-edition.de/start.html">Jean Paul –
     Sämtliche Briefe digital</a></p>
    <p>Die Jean Paul Edition der Berlin-Brandenburgischen Akademie der Wissenschaften erarbeitete von 1992 bis 2016
     sämtliche Briefe an den Dichter als IV. Abteilung        der Historisch-kritischen Ausgabe. Es folgte von 2016 bis
@@ -72,20 +72,17 @@ return
     Geschichte"</a></p>
     <br/>
 
-    <h4>Beschreibung der Funktionalitäten</h4>
-   <h5>Textsammlung</h5>
-  <p>Wenn man in in der Navigationsleiste auf "Textsammlung" klickt wird eine eine Liste aller zehn Briefe angezeigt.
-    Jeder einzelne Brief kann angeklickt werden. Es wird der Titel der digitalen Edition des Briefes, die Quelle des
-    Briefes selbst und der gesamte Text ausgegeben.
+    <h4>Description of functionalities</h4>
+   <h5>Text collections</h5>
+  <p>If you click on "Text collection" in the navigation bar, a list of all ten letters is displayed. Each individual letter can be clicked on. The title of the digital edition of the letter, the source of the letter itself and the entire text are displayed.
     </p>
     <br/>
-    <h5>Analyse</h5>
-     <p>Im Bereich der Analyse gibt es Analyseergebnisse zu entdecken, welche über den gesmaten Korpus der Texte
-    durchgeführt wurde
+    <h5>Analysis</h5>
+     <p>In the area of analysis, there are analysis results to be discovered, which were carried out on the collected corpus of texts
          <ul>
-             <li>Zählen aller unterschiedlichen Layoutanweisungen in den Texten</li>
-             <li>Suche nach dem Textstring "Vergnügen" in den Texten</li>
-             <li>Auswertung von Tokens, Types und Absätzen</li>
+             <li>Counting all the different layout instructions in the texts</li>
+             <li>Search for the text string "pleasure" in the texts</li>
+             <li>Evaluation of tokens, types and paragraphs</li>
          </ul>
      </p>
     </div>

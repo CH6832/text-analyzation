@@ -14,7 +14,7 @@ declare option exist:serialize "method=html media-type=text/html";
 
      <!-- Bootstrap Navigation -->
          <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">ANALYZATIONS OF TEXTS</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
     aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,10 +28,10 @@ declare option exist:serialize "method=html media-type=text/html";
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="listing.xquery">Textsammlung</a>
+            <a class="nav-link" href="listing.xquery">Text collection</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Analyse</a>
+            <a class="nav-link" href="#">Analyzation</a>
           </li>
         </ul>
       </div>
@@ -47,7 +47,7 @@ declare option exist:serialize "method=html media-type=text/html";
         <h2>Liste aller Titel</h2>
         <ul>
 {
-    for $title in collection("/briefe/data")//title[@n = 'digital']
+    for $title in collection("/textanalyzation/data")//title[@n = 'digital']
     order by $title descending
     return <li>{ data($title) }</li>
 }
@@ -61,7 +61,7 @@ declare option exist:serialize "method=html media-type=text/html";
         <ul>
             <!-- für jeden aller unterschiedlichen, im Text vorkommenden Layoutanweisungen ... -->
 {
-    for $rendition in distinct-values(collection("/briefe/data")//@rendition)
+    for $rendition in distinct-values(collection("/textanalyzation/data")//@rendition)
     (: wird die Anzahl der Anweisungen gezählt und in der Variable $anzahlrendition gespeichert :) let $anzahlrendition
         :=
         for $rend in//div//* (: in dieser Variable wird für alle Elemente innerhalb von div geprüft ... :)
@@ -82,7 +82,7 @@ declare option exist:serialize "method=html media-type=text/html";
         <ul>
 
 {
-    for $absatz in collection("/briefe/data")//div[@type = 'letter']/p
+    for $absatz in collection("/textanalyzation/data")//div[@type = 'letter']/p
     let $briefnummer := $absatz/preceding::idno[@type = 'TELOTAID']
     where contains($absatz, "Vergnügen")
     (: alternativ dazu: for $absatz in collection("briefe/data")//div[@type='letter']/p[contains(., "Vergnügen")] :)
@@ -105,7 +105,7 @@ declare option exist:serialize "method=html media-type=text/html";
             <th>Anzahl Absätze</th>
 
 {
-    for $text in collection("/briefe/data")
+    for $text in collection("/textanalyzation/data")
     let $title := $text//title[@n = 'digital']
     let $all-paragraphs := $text//text//p
     let $toks := $text//text()/tokenize(normalize-space(.), '\s')

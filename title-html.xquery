@@ -7,7 +7,7 @@ declare default element namespace "http://www.tei-c.org/ns/1.0";
 declare option exist:serialize "method=html media-type=text/html";
 
 
-declare variable $briefe := collection("/briefe/data");
+declare variable $briefe := collection("/textanalyzation/data");
 
 
 <html>

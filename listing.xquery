@@ -7,7 +7,7 @@ declare option exist:serialize "method=html media-type=text/html";
 let $werke :=
 <texts>
     {
-        for $resource in collection("/briefe/data")
+        for $resource in collection("/textanalyzation/data")
         return
     <text name="{ replace(base-uri($resource), '.+/(.+)$', '$1') }">
             { $resource//title[@n = 'digital'] }
@@ -26,7 +26,7 @@ return
 
     <!-- Bootstrap Navigation -->
          <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">ANALYZATIONS OF TEXTS</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
     aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,10 +40,10 @@ return
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Textsammlung <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Text collection <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="analyze-all.xquery">Analyse</a>
+            <a class="nav-link" href="analyze-all.xquery">Analyzation</a>
           </li>
         </ul>
       </div>
