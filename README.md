@@ -38,6 +38,8 @@ This is small project about the analyzation of multiple letters.
     ├── img/ - images for the README.md
     ├── js/ - javascript for application
     ├── analyze-all.xquery - source code for entire statistical analyzation for all letters
+    ├── CODE_OF_CONDUCT.md - project code of conduct
+    ├── COPYRIGHT - project copyright
     ├── index.xquery - program entry point
     ├── README.md - relevant information about the project
     ├── title-html.xquery - 
@@ -71,3 +73,11 @@ This is small project about the analyzation of multiple letters.
 ## :bookmark: License
 
 This project is licensed under the terms of the [GPL v3](LICENSE).
+
+## :copyright: Copyright
+
+See the [COPYRIGHT](COPYRIGHT) file for copyright and licensing details.
+
+## :straight_ruler: Code of Conduct
+
+Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to this project.
