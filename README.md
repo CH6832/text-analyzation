@@ -38,7 +38,6 @@ This is small project about the analyzation of multiple letters.
     ├── img/ - images for the README.md
     ├── js/ - javascript for application
     ├── analyze-all.xquery - source code for entire statistical analyzation for all letters
-    ├── CODE_OF_CONDUCT.md - project code of conduct
     ├── COPYRIGHT - project copyright
     ├── index.xquery - program entry point
     ├── README.md - relevant information about the project
